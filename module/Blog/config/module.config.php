@@ -1,16 +1,24 @@
 <?php
 
 use Blog\Controller\BlogController;
-use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
     'controllers' => [
         'factories' => [
-            BlogController::class => InvokableFactory::class,
+            BlogController::class => function($container) {
+                return new Blog\Controller\BlogController(
+                    $container
+                );
+            },
         ]
     ],
     'router' => [
         'routes' => include __DIR__ . '/routes.php'
+    ],
+    'view_manager' => [
+        'template_path_stack' => [
+            'blog' => __DIR__ . '/../view',
+        ],
     ],
     'doctrine' => [
         'driver' => [
@@ -19,18 +27,18 @@ return [
                 'class' => \Doctrine\ORM\Mapping\Driver\AnnotationDriver::class,
                 'cache' => 'array',
                 'paths' => [
-                    'Blog/Entity',
+                    __DIR__ . '/../src/Entity',
                 ],
             ],
 
             // default metadata driver, aggregates all other drivers into a single one.
             // Override `orm_default` only if you know what you're doing
-//            'orm_default' => [
-//                'drivers' => [
+            'orm_default' => [
+                'drivers' => [
 //                     register `my_annotation_driver` for any entity under namespace `My\Namespace`
-//                    'My\Namespace' => 'my_annotation_driver',
-//                ],
-//            ],
+                    'Blog\Entity' => 'my_annotation_driver',
+                ],
+            ],
         ],
     ],
 ];

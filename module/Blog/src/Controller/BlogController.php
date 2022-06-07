@@ -3,7 +3,10 @@
 namespace Blog\Controller;
 
 
+use Blog\Entity\Post;
 use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Psr\Container\ContainerInterface;
 
 /**
  * @TODO Describe BlogController
@@ -12,9 +15,22 @@ use Laminas\Mvc\Controller\AbstractActionController;
  */
 class BlogController extends AbstractActionController
 {
+    private ContainerInterface $container;
+
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+
     public function indexAction()
     {
-        #todo here I want to obtains entity manager and I think I should use container instance but how to inject it?
+        $entityManager = $this->container->get('doctrine.entitymanager.orm_default');
+        $postRepository = $entityManager->getRepository(Post::class);
+        $posts = $postRepository->findAll();
+
+        return new ViewModel([
+            'posts' => $posts,
+        ]);
     }
 
     public function addAction()
