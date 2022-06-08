@@ -63,19 +63,4 @@ return [
     // Should be compatible with Laminas\ServiceManager\Config.
     // 'service_manager' => [],
 
-    'doctrine' => [
-        'connection' => [
-            // default connection name
-            'orm_default' => [
-                'driverClass' => \Doctrine\DBAL\Driver\PDO\MySql\Driver::class,
-                'params' => [
-                    'host'     => 'dbdev.hotel.check24-test.de',
-                    'port'     => '3306',
-                    'user'     => 'root',
-                    'password' => 'apidev',
-                    'dbname'   => 'blog',
-                ],
-            ],
-        ],
-    ],
 ];

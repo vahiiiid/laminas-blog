@@ -21,6 +21,18 @@ return [
         ],
     ],
     'doctrine' => [
+        'connection' => [
+            // default connection name
+            'orm_default' => [
+                'params' => [
+                    'host'     => 'dbdev.hotel.check24-test.de',
+                    'port'     => '3306',
+                    'user'     => 'root',
+                    'password' => 'apidev',
+                    'dbname'   => 'blog',
+                ],
+            ],
+        ],
         'driver' => [
             // defines an annotation driver with two paths, and names it `my_annotation_driver`
             'my_annotation_driver' => [
