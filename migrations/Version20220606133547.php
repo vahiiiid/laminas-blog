@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Migrations;
+namespace DoctrineORMModule\Migrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
 
 /**
- * Auto-generated Migration: Please modify to your needs!
+ * In this migration file we are creating a table for posts!
  */
 final class Version20220606133547 extends AbstractMigration
 {
