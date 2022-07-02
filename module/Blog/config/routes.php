@@ -1,16 +1,22 @@
 <?php
 
-use Laminas\Router\Http\Segment;
+use Laminas\Router\Http\Literal;
 
 return [
-    'blog' => [
-        'type' => Segment::class,
+    'index' => [
+        'type' => Literal::class,
         'options' => [
-            'route' => '/blog[/:action]',
+            'route' => '/blog',
             'constraints' => [],
             'defaults' => [
-                'controller' => Blog\Controller\BlogController::class,
+                'controller' => \Blog\Controller\HomeController::class,
                 'action' => 'index'
+            ],
+            'child_routes' => [
+                'type' => Literal::class,
+                'options' => [
+                    'route' => '/post'
+                ]
             ]
         ]
     ]

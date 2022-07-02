@@ -9,11 +9,11 @@ use Laminas\View\Model\ViewModel;
 use Psr\Container\ContainerInterface;
 
 /**
- * @TODO Describe BlogController
+ * @TODO Describe HomeController
  *
  * @copyright CHECK24 Vergleichsportal Hotel GmbH
  */
-class BlogController extends AbstractActionController
+class HomeController extends AbstractActionController
 {
     private ContainerInterface $container;
 
@@ -33,18 +33,9 @@ class BlogController extends AbstractActionController
         ]);
     }
 
-    public function addAction()
+    public function store()
     {
-        var_dump('add');
-    }
-
-    public function editAction()
-    {
-        var_dump('edit');
-    }
-
-    public function deleteAction()
-    {
-        var_dump('delete');
+        print_r(22222);
+        die();
     }
 }

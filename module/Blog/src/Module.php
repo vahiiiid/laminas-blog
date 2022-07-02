@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Blog;
 
 /**
- * @TODO Describe Module
- *
  * @copyright CHECK24 Vergleichsportal Hotel GmbH
  */
 class Module
