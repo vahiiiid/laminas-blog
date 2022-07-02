@@ -26,13 +26,15 @@
         "laminas/laminas-session": "^2.10.0",
         "laminas/laminas-di": "^3.2.2",
         "doctrine/doctrine-orm-module": "^5.1",
-        "doctrine/migrations": "^3.5"
+        "doctrine/migrations": "^3.5",
+        "vlucas/phpdotenv": "^5.4"
     },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Blog\\": "module/Blog/src/"
-        }
+        },
+        "files": ["helpers.php"]
     },
     "autoload-dev": {
         "psr-4": {
