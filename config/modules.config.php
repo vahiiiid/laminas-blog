@@ -32,5 +32,7 @@ return [
     'Application',
 
     // application modules
+    'Storage',
     'Blog',
+    'Admin',
 ];

@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Entity;
+namespace Storage\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,7 +29,7 @@ class Comment
 
     /**
      * @var Post|null
-     * @ORM\ManyToOne (targetEntity="Blog\Entity\Post")
+     * @ORM\ManyToOne (targetEntity="Storage\Entity\Post")
      * @ORM\JoinColumns ({
      * @ORM\JoinColumn (name="post_id", referencedColumnName="id")
      * })

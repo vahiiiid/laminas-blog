@@ -1,6 +1,6 @@
 <?php
 
-namespace Blog\Entity;
+namespace Storage\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

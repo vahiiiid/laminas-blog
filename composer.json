@@ -32,7 +32,9 @@
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "Blog\\": "module/Blog/src/"
+            "Storage\\": "module/Storage/src/",
+            "Blog\\": "module/Blog/src/",
+            "Admin\\": "module/Admin/src/"
         },
         "files": ["helpers.php"]
     },

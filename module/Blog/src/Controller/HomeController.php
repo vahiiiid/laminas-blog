@@ -3,7 +3,7 @@
 namespace Blog\Controller;
 
 
-use Blog\Entity\Post;
+use Storage\Entity\Post;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
 use Psr\Container\ContainerInterface;
