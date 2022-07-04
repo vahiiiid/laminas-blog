@@ -9,13 +9,13 @@ use Laminas\View\Model\ViewModel;
 /**
  * @copyright CHECK24 Vergleichsportal Hotel GmbH
  */
-class AdminController  extends AbstractActionController
+class AdminController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
-//        print_r('action');
-//        die();
+//        return new ViewModel();
+        print_r('action');
+        die();
     }
 
     public function createAction()
